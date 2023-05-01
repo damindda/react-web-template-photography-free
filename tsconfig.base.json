@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@growth-tower/services/tower-service": ["libs/web/services/tower-service/src/index.ts"],
+      "@growth-tower/services/tower-service": [
+        "libs/web/services/tower-service/src/index.ts"
+      ],
       "@growth-tower/web/data-access": ["libs/web/data-access/src/index.ts"]
     }
   },
