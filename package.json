@@ -2,13 +2,11 @@
   "name": "growth-tower",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "private": true,
-  "dependencies": {
-  },
   "devDependencies": {
-    "nx": "16.0.1",
-    "@nx/workspace": "16.0.1"
+    "@nrwl/angular": "^16.0.1",
+    "@nx/workspace": "16.0.1",
+    "nx": "16.0.1"
   }
 }
