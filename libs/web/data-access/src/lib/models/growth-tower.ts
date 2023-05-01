@@ -1,25 +1,24 @@
 export interface GrowthJob {
-  readonly name: string;
-  readonly progressPercentage: number;
+  name: string;
+  progressPercentage: number;
 }
 
 export interface GrowthTray {
-  readonly identifier: string;
-  readonly growthJob: GrowthJob;
+  identifier: string;
+  growthJob: GrowthJob;
 }
 
 export interface Slots {
-  readonly number: number;
-  readonly growthTray: GrowthTray;
+  number: number;
+  growthTray: GrowthTray;
 }
 
 export interface GrowthTower {
-  readonly number: number;
-  readonly slots: Slots[];
+  number: number;
+  slots: Slots[];
 }
 
 export type GrowthTowerRecord = readonly GrowthTower[];
-
 
 
 // {

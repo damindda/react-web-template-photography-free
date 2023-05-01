@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
-import { GrowthTowerRecord} from './growth-tower-state';
+import { GrowthTowerRecord} from './models/growth-tower';
 
 export interface GrowthTowerState {
     towers: GrowthTowerRecord
