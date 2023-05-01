@@ -11,4 +11,4 @@ import { remoteRoutes } from './entry.routes';
   imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
   providers: [],
 })
-export class RemoteEntryModule {}
+export class DashboardRemoteEntryModule {}

@@ -7,7 +7,7 @@ export const appRoutes: Route[] = [
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('dashboard/Module').then((m) => m.RemoteEntryModule),
+      import('dashboard/Module').then((m) => m.DashboardRemoteEntryModule),
   },
   {
     path: 'tower',
