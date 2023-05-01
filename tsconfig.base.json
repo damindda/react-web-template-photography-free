@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@growth-tower/trays": ["libs/trays/src/index.ts"],
+      "@growth-tower/web/data-access": ["libs/web/data-access/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
