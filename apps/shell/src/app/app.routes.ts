@@ -6,8 +6,7 @@ export const appRoutes: Route[] = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
-    loadChildren: () =>
-      import('dashboard/Module').then((m) => m.DashboardRemoteEntryModule),
+    loadChildren: () => import('dashboard/Module').then((m) => m.DashboardRemoteEntryModule),
   },
   {
     path: 'tower',
