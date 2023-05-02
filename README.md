@@ -4,7 +4,7 @@ This is an attempt of visualising the Tower data based on the Tower Data interfa
 
 ## Getting started
 
-Run `nx serve shell` to see the projects, project should open in localhost:4200.
+Run `nx serve shell` to see the projects, project should open in http://localhost:4200/.
 
 ## About the folder structure and MFE projects
 
