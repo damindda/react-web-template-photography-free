@@ -7,11 +7,7 @@ export const appRoutes: Route[] = [
   {
     path: 'dashboard',
     loadChildren: () => import('dashboard/Module').then((m) => m.DashboardRemoteEntryModule),
-  },
-  {
-    path: 'tower',
-    loadChildren: () => import('tower/Routes').then((m) => m.remoteRoutes),
-  },
+  }
 ];
 
 @NgModule({
