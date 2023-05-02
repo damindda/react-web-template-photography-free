@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
-import { GrowthTowerRecord} from './models/growth-tower';
+import { Tower, TowerService } from '@growth-tower/web/tower-service';
+import { Observable } from 'rxjs';
 
 export interface GrowthTowerState {
-    towers: GrowthTowerRecord
+    towers: Tower[];
 }
 
 const initialState: GrowthTowerState = {
@@ -12,11 +13,13 @@ const initialState: GrowthTowerState = {
 @Injectable()
 export class GrowthTowerComponentStore extends ComponentStore<GrowthTowerState> {
 
-    constructor(){
+    getTowerData$: Observable<Tower[]> = this.towerService.towerData$;
+    
+    constructor(private towerService: TowerService){
         super(initialState);
     }
 
-    readonly updateRecords = this.updater<GrowthTowerRecord>((state, data) => ({
+    readonly updateRecords = this.updater<Tower[]>((state, data) => ({
         ...state,
         towers: [...data]
     }))

@@ -5,27 +5,30 @@ import { TowerService } from '@growth-tower/services/tower-service';
 import { Tower } from '@growth-tower/web/tower-service';
 import { Observable, filter, map, tap } from 'rxjs';
 
-import { GrowthTrayComponent } from '@growth-tower/web/ui/growth-tray'
+import { GrowthTrayComponent } from '@growth-tower/web/ui/growth-tray';
+import { GrowthTowerComponentStore } from '@growth-tower/web/data-access';
 
 @Component({
   standalone: true,
   selector: 'growth-tower-dashboard-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  imports: [CommonModule, GrowthTrayComponent]
+  imports: [CommonModule, GrowthTrayComponent],
+  providers: [GrowthTowerComponentStore]
+
 })
 export class DetailsComponent implements OnInit {
   route = inject(ActivatedRoute);
+  componentStore = inject(GrowthTowerComponentStore);
   towerService = inject(TowerService);
-  towerData$: Observable<Tower[]> = this.towerService.towerData$;
+  towerData$: Observable<Tower[]> = this.componentStore.getTowerData$;
   splittedTrayData$!: Observable<Tower[]>;
 
   ngOnInit() {
-    
     const id = this.route.snapshot.params['id'];
 
-    this.splittedTrayData$ = this.towerService.towerData$.pipe (
-      map(items => 
-       items.filter(item => item.number  === Number(id))) )
+    this.splittedTrayData$ = this.towerData$.pipe(
+      map(items => items.filter(item => item.number === Number(id)))
+    );
   }
 }
