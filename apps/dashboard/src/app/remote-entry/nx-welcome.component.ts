@@ -28,10 +28,5 @@ import { Observable } from 'rxjs';
 })
 export class NxWelcomeComponent {
   towerService = inject(TowerService);
-
   towerData$: Observable<Tower[]> = this.towerService.towerData$;
-
-  getSlotDetails(details: Tower): void {
-    console.log('slot details', details);
-  }
 }
