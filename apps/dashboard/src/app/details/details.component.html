@@ -1,4 +1,19 @@
-
 <h2>tower Details</h2>
 
-{{towerData$ | async | json}}
+<!-- {{newData$ | async | json}} -->
+
+<div *ngFor="let item of newData$ | async">
+  <!-- <div>{{ item.number }}</div> -->
+  <div *ngFor="let slot of item.slots">
+    number {{slot.number}}
+    <br />
+    <ng-container *ngIf="slot.growthTray else noTowerTemplate">
+      <growth-tower-growth-tray [items]="slot.growthTray"></growth-tower-growth-tray>
+    </ng-container>
+    <hr/>
+  </div>
+</div>
+
+<ng-template #noTowerTemplate>
+  <div>No tower data available</div>
+</ng-template>

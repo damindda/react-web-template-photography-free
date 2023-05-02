@@ -1,0 +1,16 @@
+<div *ngIf="items">
+    {{items | json }}
+    identifier {{items.identifier}}
+    <br />
+
+    <ng-container *ngIf="items.growthJob else noGrowthTray">
+        name {{items.growthJob.name}}
+        <br />
+        progressPercentage {{items.growthJob.progressPercentage}}
+    </ng-container>
+
+</div>
+
+<ng-template #noGrowthTray>
+    <div>No growth tray data available</div>
+</ng-template>
