@@ -11,9 +11,10 @@ import { Observable } from 'rxjs';
       <div class="tower-content p-20">
         <ng-container *ngIf="towerData$ | async as towerData; else loadingTemplate">
           <div *ngFor="let item of towerData">
-            <div>{{ item.number }}</div>
-            <button (click)="getSlotDetails(item)">Get Values</button>
-            <a routerLink="./{{ item.number }}">growth tray {{ item.number }}</a>
+          <a routerLink="./{{ item.number }}" class="p-20">
+          <h3 class="pb-6">Tower Number {{ item.number }}</h3>
+            <label>Check Details of tower {{ item.number }}</label>
+          </a>
           </div>
         </ng-container>
       </div>

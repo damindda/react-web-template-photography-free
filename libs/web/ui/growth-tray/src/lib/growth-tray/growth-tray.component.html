@@ -1,9 +1,11 @@
 <div *ngIf="growthTray">
-    Growth Tray identifier {{growthTray.identifier}}
+    <label class="pb-6">Growth Tray identifier {{growthTray.identifier}}</label>
     <ng-container *ngIf="growthTray.growthJob else noGrowthTray">
-        Growth Tray name {{growthTray.growthJob.name}}
-        <br />
-        Growth Tray Progress Percentage {{growthTray.growthJob.progressPercentage}}
+        <div class="flex flex-column">
+            <label class="pb-6">Growth Tray name {{growthTray.growthJob.name}}</label>
+            <label class="pb-6">Growth Tray Progress Percentage {{growthTray.growthJob.progressPercentage}}</label> 
+        </div>
+      
     </ng-container>
 </div>
 
