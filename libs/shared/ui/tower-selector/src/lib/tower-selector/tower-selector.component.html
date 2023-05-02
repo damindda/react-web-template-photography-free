@@ -1,9 +1,6 @@
-<p>change tower</p>
-
-<select #cricket (change)="onChange($event)">
-    <option value="default">Please select</option>
-    <option *ngFor="let tower of towers" [value]="tower">
-        {{tower}}
-    </option>
-</select>
-
+<mat-form-field appearance="fill">
+    <mat-label>Change Towers</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let tower of towers" [value]="tower">{{tower}}</mat-option>
+    </mat-select>
+</mat-form-field>
