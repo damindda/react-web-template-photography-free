@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TowerService } from '@growth-tower/services/tower-service';
 import { GrowthTowerComponentStore } from '@growth-tower/web/data-access';
 import { Tower } from '@growth-tower/web/tower-service';
@@ -22,7 +22,8 @@ import { Observable } from 'rxjs';
       <div>data is loading, please wait....!</div>
     </ng-template>
   `,
-  providers: [GrowthTowerComponentStore]
+  providers: [GrowthTowerComponentStore],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NxWelcomeComponent {
   towerService = inject(TowerService);

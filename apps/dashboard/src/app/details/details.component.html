@@ -2,7 +2,7 @@
   <div class="main-content">
     <div class="flex flex-start">
       <h2 class="p-20">Tower Tray Details</h2>
-      <growth-tower-selector></growth-tower-selector>
+      <growth-tower-selector (selection)="handleTowerSelection($event)"></growth-tower-selector>
     </div>
 
     <ng-container *ngIf="splittedTrayData$ | async as trayData else loadingTemplate">
