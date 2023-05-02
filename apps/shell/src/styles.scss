@@ -74,3 +74,19 @@ a {
   width: 100%;
   overflow: auto;
 }
+
+
+.tower-content{
+  display: flex;
+  width: 400px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #a31a59;
+  border-radius: 10px;
+  margin: 30px;
+
+  a {
+    color: #fff;
+  }
+} 
