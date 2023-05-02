@@ -1,7 +1,10 @@
 <div class=" flex p-20">
   <div class="main-content">
-    <h2 class="p-20">Tower Tray Details</h2>
-    <growth-tower-selector></growth-tower-selector>
+    <div class="flex flex-start">
+      <h2 class="p-20">Tower Tray Details</h2>
+      <growth-tower-selector></growth-tower-selector>
+    </div>
+
     <ng-container *ngIf="splittedTrayData$ | async as trayData else loadingTemplate">
       <div *ngFor="let item of trayData" class="p-20">
         <div *ngFor="let slot of item.slots" class="py-20">
