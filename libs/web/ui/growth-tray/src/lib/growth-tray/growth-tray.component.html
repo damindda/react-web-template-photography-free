@@ -1,14 +1,10 @@
-<div *ngIf="items">
-    {{items | json }}
-    identifier {{items.identifier}}
-    <br />
-
-    <ng-container *ngIf="items.growthJob else noGrowthTray">
-        name {{items.growthJob.name}}
+<div *ngIf="growthTray">
+    Growth Tray identifier {{growthTray.identifier}}
+    <ng-container *ngIf="growthTray.growthJob else noGrowthTray">
+        Growth Tray name {{growthTray.growthJob.name}}
         <br />
-        progressPercentage {{items.growthJob.progressPercentage}}
+        Growth Tray Progress Percentage {{growthTray.growthJob.progressPercentage}}
     </ng-container>
-
 </div>
 
 <ng-template #noGrowthTray>

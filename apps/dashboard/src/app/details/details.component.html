@@ -1,14 +1,12 @@
 <h2>tower Details</h2>
 
-<!-- {{newData$ | async | json}} -->
 
 <div *ngFor="let item of newData$ | async">
-  <!-- <div>{{ item.number }}</div> -->
   <div *ngFor="let slot of item.slots">
-    number {{slot.number}}
+    slot number {{slot.number}}
     <br />
     <ng-container *ngIf="slot.growthTray else noTowerTemplate">
-      <growth-tower-growth-tray [items]="slot.growthTray"></growth-tower-growth-tray>
+      <growth-tower-growth-tray [growthTray]="slot.growthTray"></growth-tower-growth-tray>
     </ng-container>
     <hr/>
   </div>

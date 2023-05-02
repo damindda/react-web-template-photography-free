@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { GrowthTray } from '@growth-tower/web/tower-service';
 
 @Component({
   selector: 'growth-tower-growth-tray',
@@ -11,5 +12,5 @@ import { ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GrowthTrayComponent {
-  @Input() items!: any;
+  @Input() growthTray!: GrowthTray;
 }
