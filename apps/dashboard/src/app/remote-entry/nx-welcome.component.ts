@@ -9,13 +9,11 @@ import { Observable } from 'rxjs';
   template: `
     <div class="main-content p-20">
       <h2 class="p-20">Towers</h2>
-      <div class="flex">
+      <div class="flex flex-start">
         <ng-container *ngIf="towerData$ | async as towerData; else loadingTemplate">
-          <div *ngFor="let item of towerData" class="tower-content p-20">
-            <a routerLink="./{{ item.number }}" class="p-20">
+          <div *ngFor="let item of towerData" class="tower-content p-20" routerLink="./{{ item.number }}">
               <h3 class="pb-6">Tower Number {{ item.number }}</h3>
               <label>Check Details of tower {{ item.number }}</label>
-            </a>
           </div>
         </ng-container>
       </div>
