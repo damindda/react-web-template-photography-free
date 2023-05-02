@@ -1,0 +1,9 @@
+<p>change tower</p>
+
+<select #cricket (change)="onChange($event)">
+    <option value="default">Please select</option>
+    <option *ngFor="let tower of towers" [value]="tower">
+        {{tower}}
+    </option>
+</select>
+

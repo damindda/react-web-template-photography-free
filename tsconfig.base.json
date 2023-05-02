@@ -19,6 +19,7 @@
       "@growth-tower/shared/ui/footer": ["libs/shared/ui/footer/src/index.ts"],
       "@growth-tower/shared/ui/header": ["libs/shared/ui/header/src/index.ts"],
       "@growth-tower/shared/ui/top-nav": ["libs/shared/ui/top-nav/src/index.ts"],
+      "@growth-tower/shared/ui/tower-selector": ["libs/shared/ui/tower-selector/src/index.ts"],
       "@growth-tower/web/data-access": ["libs/web/data-access/src/index.ts"],
       "@growth-tower/web/tower-service": ["libs/web/services/tower-service/src/index.ts"],
       "@growth-tower/web/ui/growth-tray": ["libs/web/ui/growth-tray/src/index.ts"]

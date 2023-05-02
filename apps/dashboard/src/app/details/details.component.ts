@@ -7,13 +7,14 @@ import { Observable, filter, map, tap } from 'rxjs';
 
 import { GrowthTrayComponent } from '@growth-tower/web/ui/growth-tray';
 import { GrowthTowerComponentStore } from '@growth-tower/web/data-access';
+import { TowerSelectorComponent } from '@growth-tower/shared/ui/tower-selector';
 
 @Component({
   standalone: true,
   selector: 'growth-tower-dashboard-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  imports: [CommonModule, GrowthTrayComponent],
+  imports: [CommonModule, GrowthTrayComponent, TowerSelectorComponent],
   providers: [GrowthTowerComponentStore]
 
 })
