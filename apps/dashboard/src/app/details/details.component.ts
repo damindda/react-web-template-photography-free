@@ -18,13 +18,13 @@ export class DetailsComponent implements OnInit {
   route = inject(ActivatedRoute);
   towerService = inject(TowerService);
   towerData$: Observable<Tower[]> = this.towerService.towerData$;
-  newData$!: Observable<any[]>;
+  splittedTrayData$!: Observable<Tower[]>;
 
   ngOnInit() {
     
     const id = this.route.snapshot.params['id'];
 
-    this.newData$ = this.towerService.towerData$.pipe (
+    this.splittedTrayData$ = this.towerService.towerData$.pipe (
       map(items => 
        items.filter(item => item.number  === Number(id))) )
   }

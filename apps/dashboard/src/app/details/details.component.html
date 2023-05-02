@@ -1,16 +1,23 @@
-<h2>tower Details</h2>
-
-
-<div *ngFor="let item of newData$ | async">
-  <div *ngFor="let slot of item.slots">
-    slot number {{slot.number}}
-    <br />
-    <ng-container *ngIf="slot.growthTray else noTowerTemplate">
-      <growth-tower-growth-tray [growthTray]="slot.growthTray"></growth-tower-growth-tray>
-    </ng-container>
-    <hr/>
+<div class=" flex p-20">
+  <div class="main-content">
+  <h2 class="p-20">Tower Tray Details</h2>
+  <ng-container *ngIf="splittedTrayData$ | async as trayData else loadingTemplate">
+  <div *ngFor="let item of trayData" class="p-20">
+    <div *ngFor="let slot of item.slots">
+      slot number {{slot.number}}
+      <br />
+      <ng-container *ngIf="slot.growthTray else noTowerTemplate">
+        <growth-tower-growth-tray [growthTray]="slot.growthTray"></growth-tower-growth-tray>
+      </ng-container>
+      <hr />
+    </div>
   </div>
+</ng-container>
 </div>
+</div>
+<ng-template #loadingTemplate>
+  <div>data is loading, please wait....!</div>
+</ng-template>
 
 <ng-template #noTowerTemplate>
   <div>No tower data available</div>

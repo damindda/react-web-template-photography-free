@@ -6,11 +6,21 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'growth-tower-nx-welcome',
   template: `
-    <div *ngFor="let item of towerData$ | async">
-      <div>{{ item.number }}</div>
-      <button (click)="getSlotDetails(item)">Get Values</button>
-      <a routerLink="./{{ item.number }}">growth tray number {{ item.number }}</a>
+    <div class="main-content p-20">
+      <h2 class="p-20">Towers</h2>
+      <div class="tower-content p-20">
+        <ng-container *ngIf="towerData$ | async as towerData; else loadingTemplate">
+          <div *ngFor="let item of towerData">
+            <div>{{ item.number }}</div>
+            <button (click)="getSlotDetails(item)">Get Values</button>
+            <a routerLink="./{{ item.number }}">growth tray {{ item.number }}</a>
+          </div>
+        </ng-container>
+      </div>
     </div>
+    <ng-template #loadingTemplate>
+      <div>data is loading, please wait....!</div>
+    </ng-template>
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None
