@@ -10,4 +10,6 @@ Run `nx serve shell` to see the projects, project should open in http://localhos
 
 There are angular standalone components for header, footer, top nav in libs location.
 
+There are 2 apps named shell, dashboard. Shell represents MFE global header and footer concept and dashboard contains the basic towers, and if user clicks on a tower, user will navigate to the details page and the details page contains the growth tray details.
+
 
