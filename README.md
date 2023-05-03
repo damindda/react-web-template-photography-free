@@ -2,9 +2,13 @@
 
 This is an attempt of visualising the Tower data based on the Tower Data interface. Angular 15, NX workspace, ngrx component store and module federation technologies has been used.
 
-## Getting started
+## Getting started, how to run
 
-Run `nx serve shell` to see the projects, project should open in http://localhost:4200/.
+- Clone the git project
+
+- Do `npm install`
+
+- Run `nx serve shell` to see the projects, project should open in http://localhost:4200/.
 
 ## About the folder structure and MFE projects
 
