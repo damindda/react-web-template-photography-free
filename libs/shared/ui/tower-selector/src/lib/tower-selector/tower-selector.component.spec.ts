@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SharedUiTowerSelectorComponent } from './tower-selector.component';
+import { TowerSelectorComponent } from './tower-selector.component';
 
-describe('SharedUiTowerSelectorComponent', () => {
-  let component: SharedUiTowerSelectorComponent;
-  let fixture: ComponentFixture<SharedUiTowerSelectorComponent>;
+describe('TowerSelectorComponent', () => {
+  let component: TowerSelectorComponent;
+  let fixture: ComponentFixture<TowerSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SharedUiTowerSelectorComponent]
+      imports: [TowerSelectorComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SharedUiTowerSelectorComponent);
+    fixture = TestBed.createComponent(TowerSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TowerUiFooterComponent } from './footer.component';
 
-describe('SharedUiFooterComponent', () => {
+describe('FooterComponent', () => {
   let component: TowerUiFooterComponent;
   let fixture: ComponentFixture<TowerUiFooterComponent>;
 

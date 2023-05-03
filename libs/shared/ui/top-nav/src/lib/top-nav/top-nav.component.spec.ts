@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TowerUiTopNavComponent } from './top-nav.component';
 
-describe('SharedUiTopNavComponent', () => {
+describe('TopNavComponent', () => {
   let component: TowerUiTopNavComponent;
   let fixture: ComponentFixture<TowerUiTopNavComponent>;
 

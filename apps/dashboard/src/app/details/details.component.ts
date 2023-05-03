@@ -8,13 +8,14 @@ import { Observable, map } from 'rxjs';
 import { GrowthTrayComponent } from '@growth-tower/web/ui/growth-tray';
 import { GrowthTowerComponentStore } from '@growth-tower/web/data-access';
 import { TowerSelectorComponent } from '@growth-tower/shared/ui/tower-selector';
+import { ChartsComponent } from '@growth-tower/shared/ui/charts';
 
 @Component({
   standalone: true,
   selector: 'growth-tower-dashboard-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  imports: [CommonModule, GrowthTrayComponent, TowerSelectorComponent, AsyncPipe],
+  imports: [CommonModule, GrowthTrayComponent, TowerSelectorComponent, ChartsComponent],
   providers: [GrowthTowerComponentStore],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -25,6 +26,8 @@ export class DetailsComponent implements OnInit {
   towerService = inject(TowerService);
   towerData$: Observable<Tower[]> = this.componentStore.getTowerData$;
   splittedTrayData$!: Observable<Tower[]>;
+
+  singleTowerData$: Observable<Tower[]> = this.componentStore.getSingleTowerData$;
   
   ngOnInit() {
     const id = Number(this.route.snapshot.params['id']);
@@ -40,7 +43,7 @@ export class DetailsComponent implements OnInit {
   }
 
   setSingleToweValues(id: number): void {
-    this.splittedTrayData$ = this.towerData$.pipe(map(items => items.filter(item => item.number === id)));
+    this.componentStore.loadSingleTowerData(id);
     this.handleRouterChange(id);
   }
 }
