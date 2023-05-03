@@ -64,6 +64,6 @@ export class ChartsComponent {
 
   public barChartData: ChartConfiguration['data'] = {
     labels: [],
-    datasets: [{ data: [], label: 'Series A' }]
+    datasets: [{ data: [], label: '' }]
   };
 }
