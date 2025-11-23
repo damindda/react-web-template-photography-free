@@ -5,8 +5,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit"
   },
-  "editor.formatOnSave": true,
   "files.associations": {
     "*.css": "tailwindcss"
-  }
+  },
+  "editor.formatOnSave": true,
 }
