@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 
 const AboutMe = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
   useGSAP(() => {
     gsap.set(".about-me-video-container", { marginTop: "-220vh", opacity: 0 });
@@ -37,7 +37,7 @@ const AboutMe = () => {
           duration: 3,
           ease: "power1.inOut",
         },
-        "<",
+        "<"
       );
     };
   }, []);
@@ -45,7 +45,14 @@ const AboutMe = () => {
   return (
     <section className="about-me-video-container">
       <div className="h-dvh">
-        <video ref={videoRef} muted playsInline preload="auto" src="/videos/output1.mp4" className="about-me-video" />
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          preload="auto"
+          src="/videos/output1.mp4"
+          className="about-me-video"
+        />
       </div>
     </section>
   );
