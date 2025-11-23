@@ -1,19 +1,25 @@
-# Growth Tower Representation
+## React + GSAP Free Web Template
 
-This is an attempt of visualising the Tower data based on the Tower Data interface. Angular 15, NX workspace, ngrx component store and module federation technologies has been used.
+- React 19
+- Tailwind CSS v4
+- GSAP (GreenSock Animation Platform)
 
-## Getting started, how to run
+## Features
 
-- Clone the git project
+- Fully responsive and mobile-friendly
+- GSAP Timelines
+- Parallax Effect
+- Control ScrollTrigger & ScrollSmoother
+- Pinned Style Elements
 
-- Do `npm install`
+## How to run this Locally
 
-- Run `nx serve shell` to see the projects, project should open in http://localhost:4200/.
+```bash
+# 1. Clone the repo
 
-## About the folder structure and MFE projects
+# 2. Install dependencies
+npm install
 
-There are angular standalone components for header, footer, top nav in libs location.
-
-There are 2 apps named shell, dashboard. Shell represents MFE global header and footer concept and dashboard contains the basic towers, and if user clicks on a tower, user will navigate to the details page and the details page contains the growth tray details.
-
-
+# 3. Run the project
+npm run dev
+```

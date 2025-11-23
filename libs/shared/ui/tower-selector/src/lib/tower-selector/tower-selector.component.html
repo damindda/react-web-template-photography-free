@@ -1,8 +1,0 @@
-<mat-form-field appearance="fill">
-    <mat-label>Change Towers</mat-label>
-    <mat-select (selectionChange)="onChange($event)" name="food">
-      <mat-option *ngFor="let tower of towers" [value]="tower.value">
-        {{tower.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
