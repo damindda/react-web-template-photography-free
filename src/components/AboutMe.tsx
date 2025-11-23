@@ -37,7 +37,7 @@ const AboutMe = () => {
           duration: 3,
           ease: "power1.inOut",
         },
-        "<"
+        "<",
       );
     };
   }, []);
@@ -45,14 +45,7 @@ const AboutMe = () => {
   return (
     <section className="about-me-video-container">
       <div className="h-dvh">
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/output1.mp4"
-          className="about-me-video"
-        />
+        <video ref={videoRef} muted playsInline preload="auto" src="/videos/output1.mp4" className="about-me-video" />
       </div>
     </section>
   );

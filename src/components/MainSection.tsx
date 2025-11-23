@@ -24,10 +24,7 @@ export const MainSection = () => {
   return (
     <section className="main-banner-section">
       <div className="abs-center mt-80">
-        <AnimateHeaderText
-          text="|||||"
-          className="text-white text-4xl header-text"
-        />
+        <AnimateHeaderText text="|||||" className="text-white text-4xl header-text" />
       </div>
       <div className="size-full">
         <img src="/images/main-banner.jpg" alt="background" />

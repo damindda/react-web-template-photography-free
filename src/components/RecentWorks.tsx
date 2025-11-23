@@ -59,35 +59,19 @@ const RecentWorks = () => {
           el="h1"
         />
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"}>
-          <motion.p
-            className="text-white text-3xl pb-8"
-            variants={defaultAnimation}
-          >
-            Thanks so much for visiting our site! I am Erica Bennon, the face
-            behind Erica Bennon Photography.
+          <motion.p className="text-white text-3xl pb-8" variants={defaultAnimation}>
+            Thanks so much for visiting our site! I am Erica Bennon, the face behind Erica Bennon Photography.
           </motion.p>
-          <motion.p
-            className="text-white text-2xl pb-12"
-            variants={defaultAnimation}
-          >
-            I am based in Manchester, United Kingdom. My photography is
-            clean-cut and top-of-the-line quality, as apparent from my various
-            styles if you already have visited my portfolio, you now already
-            know.
+          <motion.p className="text-white text-2xl pb-12" variants={defaultAnimation}>
+            I am based in Manchester, United Kingdom. My photography is clean-cut and top-of-the-line quality, as
+            apparent from my various styles if you already have visited my portfolio, you now already know.
           </motion.p>
-          <motion.h2
-            className="header-text-italic-theme text-8xl text-white"
-            variants={defaultAnimation}
-          >
+          <motion.h2 className="header-text-italic-theme text-8xl text-white" variants={defaultAnimation}>
             Recent Works
           </motion.h2>
-          <motion.p
-            className="text-white text-2xl pb-12"
-            ref={ref}
-            variants={defaultAnimation}
-          >
-            Here are my Recent photography. Showcase my few best works, love to
-            book an appointment, give me a give me a shout today...!
+          <motion.p className="text-white text-2xl pb-12" ref={ref} variants={defaultAnimation}>
+            Here are my Recent photography. Showcase my few best works, love to book an appointment, give me a give me a
+            shout today...!
           </motion.p>
         </motion.div>
 

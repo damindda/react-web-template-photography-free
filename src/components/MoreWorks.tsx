@@ -41,31 +41,16 @@ const MoreWorks = () => {
       </div>
       <div className="lg:w-1/2">
         <div className="max-w-3xl">
-          <span className="header-text-italic-theme text-6xl text-white">
-            Check out my latest
-          </span>
-          <AnimateHeaderText
-            text="Award"
-            className="header-text text-8xl text-white uppercase font-black"
-            el="h2"
-          />
-          <AnimateHeaderText
-            text="Winning"
-            className="header-text text-8xl text-white uppercase front-black"
-            el="h2"
-          />
-          <h2 className="header-text-italic-theme text-6xl text-white">
-            Photos collection
-          </h2>
+          <span className="header-text-italic-theme text-6xl text-white">Check out my latest</span>
+          <AnimateHeaderText text="Award" className="header-text text-8xl text-white uppercase font-black" el="h2" />
+          <AnimateHeaderText text="Winning" className="header-text text-8xl text-white uppercase front-black" el="h2" />
+          <h2 className="header-text-italic-theme text-6xl text-white">Photos collection</h2>
           <p className="text-white text-3xl pt-10 font-light">
-            I specialise in wedding, maternity, newborn, birth, baby, child, and
-            family photography. These are some of the award winning captures,
-            and my featured works captivating intro, concise location-based
-            services...!
+            I specialise in wedding, maternity, newborn, birth, baby, child, and family photography. These are some of
+            the award winning captures, and my featured works captivating intro, concise location-based services...!
           </p>
           <p className="text-white text-2xl pt-20 font-light">
-            Capturing your best moments is a more than a job for, Every event is
-            especial.
+            Capturing your best moments is a more than a job for, Every event is especial.
           </p>
         </div>
         <div className="flex flex-col gap-5 items-end img-box lg:1/2 mt-8">

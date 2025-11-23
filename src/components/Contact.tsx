@@ -19,13 +19,7 @@ const animationVariants: Variants = {
   },
 };
 
-const ContactMeLink = ({
-  children,
-  href,
-}: {
-  children: string;
-  href: string;
-}) => {
+const ContactMeLink = ({ children, href }: { children: string; href: string }) => {
   return (
     <motion.a
       initial="initial"

@@ -20,11 +20,7 @@ const defaultAnimation = {
     },
   },
 };
-const AnimateHeaderText = ({
-  text,
-  className,
-  el: Wrapper = "h2",
-}: AnimateHeaderTextPros) => {
+const AnimateHeaderText = ({ text, className, el: Wrapper = "h2" }: AnimateHeaderTextPros) => {
   const ref = useRef(null);
 
   const isInView = useInView(ref, { amount: 0.8 });
@@ -40,11 +36,7 @@ const AnimateHeaderText = ({
         transition={{ staggerChildren: 0.1 }}
       >
         {text.split("").map((char, i) => (
-          <motion.span
-            className="inline-block"
-            variants={defaultAnimation}
-            key={i.toString()}
-          >
+          <motion.span className="inline-block" variants={defaultAnimation} key={i.toString()}>
             {char}
           </motion.span>
         ))}
