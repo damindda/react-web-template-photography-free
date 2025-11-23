@@ -1,10 +1,8 @@
 ## React Single Page Web Template - Completely free
 
-### Photography Theme
+### Photography focused Theme
 
-<div align="center">
-      <img src="./read-me/cover.png">
-<div>
+<img align="center" src="./read-me/cover.png">
 
 ### This template is focused on Photography Theme
 
@@ -18,6 +16,7 @@
 
 - Fully responsive and mobile-friendly
 - GSAP Timelines
+- React Motions Effects
 - Parallax Effect
 - Control ScrollTrigger & ScrollSmoother
 - Pinned Style Elements
