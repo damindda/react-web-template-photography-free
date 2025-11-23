@@ -1,4 +1,14 @@
-## React + GSAP Free Web Template
+## React Single Page Web Template - Completely free
+
+### Photography Theme
+
+<div align="center">
+      <img src="./read-me/cover.png">
+<div>
+
+### This template is focused on Photography Theme
+
+### React + GSAP Free Web Template
 
 - React 19
 - Tailwind CSS v4
