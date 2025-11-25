@@ -25,6 +25,7 @@
 
 ```bash
 # 1. Clone the repo
+git clone https://github.com/damindda/react-web-template-photography-free.git
 
 # 2. Install dependencies
 npm install
