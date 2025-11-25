@@ -14,10 +14,8 @@ const App = () => {
     <main>
       <NavBar />
       <MainSection />
-
       <AboutMe />
       <RecentWorks />
-
       <SecondVideo />
       <MoreWorks />
     </main>
