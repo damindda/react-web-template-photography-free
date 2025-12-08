@@ -2,44 +2,64 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 
+// Animation constants
+const ANIMATION_EASING = "power1.inOut";
+const INITIAL_MARGIN_TOP = "-220vh";
+const FADE_OUT_DELAY = 0.5;
+const FADE_IN_DURATION = 2;
+const VIDEO_SCRUB_DURATION = 3;
+
+const SCROLL_TRIGGER_CONFIG = {
+  trigger: ".about-me-video-container",
+  start: "top top",
+  end: "+=250% top",
+  scrub: true,
+  pin: true,
+};
+
 const AboutMe = () => {
-  const videoRef = useRef<any>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(() => {
-    gsap.set(".about-me-video-container", { marginTop: "-220vh", opacity: 0 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-me-video-container",
-        start: "top top",
-        end: "+=250% top",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    tl.to(".main-banner-section", {
-      delay: 0.5,
+    // Set initial state
+    gsap.set(".about-me-video-container", {
+      marginTop: INITIAL_MARGIN_TOP,
       opacity: 0,
-      ease: "power1.inOut",
     });
+
+    // Create animation timeline
+    const tl = gsap.timeline({
+      scrollTrigger: SCROLL_TRIGGER_CONFIG,
+    });
+
+    // Fade out main banner
+    tl.to(".main-banner-section", {
+      delay: FADE_OUT_DELAY,
+      opacity: 0,
+      ease: ANIMATION_EASING,
+    });
+
+    // Fade in about section
     tl.to(".about-me-video-container", {
       opacity: 1,
-      duration: 2,
-      ease: "power1.inOut",
+      duration: FADE_IN_DURATION,
+      ease: ANIMATION_EASING,
     });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(
-        videoRef.current,
-        {
-          currentTime: videoRef.current.duration,
-          duration: 3,
-          ease: "power1.inOut",
-        },
-        "<"
-      );
-    };
+    // Play video with scroll
+    if (videoRef.current) {
+      videoRef.current.onloadedmetadata = () => {
+        tl.to(
+          videoRef.current,
+          {
+            currentTime: videoRef.current!.duration,
+            duration: VIDEO_SCRUB_DURATION,
+            ease: ANIMATION_EASING,
+          },
+          "<"
+        );
+      };
+    }
   }, []);
 
   return (
