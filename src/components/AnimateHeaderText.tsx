@@ -1,29 +1,44 @@
 import { motion, useInView } from "motion/react";
 import { type JSX, useRef } from "react";
 
-type AnimateHeaderTextPros = {
+// Animation constants
+const HIDDEN_STATE = {
+  opacity: 0,
+  y: -80,
+};
+
+const VISIBLE_STATE = {
+  opacity: 1,
+  y: 0,
+  translation: {
+    duration: 1,
+  },
+};
+
+const CHARACTER_ANIMATION = {
+  hidden: HIDDEN_STATE,
+  visible: VISIBLE_STATE,
+};
+
+const STAGGER_CONFIG = {
+  staggerChildren: 0.1,
+};
+
+const IN_VIEW_THRESHOLD = 0.8;
+
+type AnimateHeaderTextProps = {
   text: string;
   className?: string;
   el?: keyof JSX.IntrinsicElements;
 };
 
-const defaultAnimation = {
-  hidden: {
-    opacity: 0,
-    y: -80,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    translation: {
-      duration: 1,
-    },
-  },
-};
-const AnimateHeaderText = ({ text, className, el: Wrapper = "h2" }: AnimateHeaderTextPros) => {
+const AnimateHeaderText = ({
+  text,
+  className,
+  el: Wrapper = "h2",
+}: AnimateHeaderTextProps) => {
   const ref = useRef(null);
-
-  const isInView = useInView(ref, { amount: 0.8 });
+  const isInView = useInView(ref, { amount: IN_VIEW_THRESHOLD });
 
   return (
     <Wrapper className={className}>
@@ -33,10 +48,14 @@ const AnimateHeaderText = ({ text, className, el: Wrapper = "h2" }: AnimateHeade
         aria-hidden
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        transition={{ staggerChildren: 0.1 }}
+        transition={STAGGER_CONFIG}
       >
         {text.split("").map((char, i) => (
-          <motion.span className="inline-block" variants={defaultAnimation} key={i.toString()}>
+          <motion.span
+            className="inline-block"
+            variants={CHARACTER_ANIMATION}
+            key={i}
+          >
             {char}
           </motion.span>
         ))}
