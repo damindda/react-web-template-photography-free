@@ -1,8 +1,13 @@
 import type { Variants } from "motion/react";
 import * as motion from "motion/react-client";
 
+// Animation timing constants
 const DURATION = 0.25;
 const STAGGER = 0.025;
+
+// Styling constants
+const LINK_CLASS_NAME =
+  "relative block overflow-hidden whitespace-nowrap text-4xl font-black sm:text-7xl md:text-6xl lg:text-4xl lg:pr-12 lg:pl-24";
 
 const animationVariants: Variants = {
   initial: {
@@ -19,13 +24,18 @@ const animationVariants: Variants = {
   },
 };
 
-const ContactMeLink = ({ children, href }: { children: string; href: string }) => {
+interface ContactMeLinkProps {
+  children: string;
+  href: string;
+}
+
+const ContactMeLink = ({ children, href }: ContactMeLinkProps) => {
   return (
     <motion.a
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black sm:text-7xl md:text-6xl lg:text-4xl lg:pr-12 lg:pl-24"
+      className={LINK_CLASS_NAME}
       style={{
         lineHeight: 1,
       }}
