@@ -1,23 +1,59 @@
 import { motion } from "motion/react";
 import type { SVGProps } from "react";
 
+// Animation constants
+const SVG_ANIMATION_DURATION = 0.225;
+const TEXT_ANIMATION_DURATION = 0.25;
+const HOVER_SCALE = 1.1;
+const TAP_SCALE = 0.95;
+
+// Styling constants
+const SVG_SIZE = "80px";
+const SVG_DIMENSIONS = {
+  width: SVG_SIZE,
+  height: SVG_SIZE,
+  viewBox: "0 0 32 32",
+};
+
+const HOVER_TAP_PROPS = {
+  whileHover: { scale: HOVER_SCALE },
+  whileTap: { scale: TAP_SCALE },
+};
+
+const SVG_GROUP_ANIMATION = {
+  initial: { scale: 4, opacity: 0 },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: SVG_ANIMATION_DURATION },
+  },
+};
+
+const LOGO_TEXT_ANIMATION = {
+  animate: {
+    transition: { duration: TEXT_ANIMATION_DURATION },
+    scale: 1,
+  },
+  initial: { scale: 0 },
+};
+
+const SUBTITLE_ANIMATION = {
+  initial: { scale: -1 },
+  animate: { scale: 1 },
+};
+
 const Logo = (props: SVGProps<SVGSVGElement>) => {
   return (
     <div className="flex align-middle">
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="cursor-pointer">
+      <motion.div {...HOVER_TAP_PROPS} className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           {...props}
-          width="80px"
-          height="80px"
-          viewBox="0 0 32 32"
+          {...SVG_DIMENSIONS}
           aria-labelledby="logo-title"
         >
           <title id="logo-title">Logo</title>
-          <motion.g
-            initial={{ scale: 4, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, transition: { duration: 0.225 } }}
-          >
+          <motion.g {...SVG_GROUP_ANIMATION}>
             <path
               fill="#ffffff"
               d="M28.01,11.98c0,0.56-0.45,1.01-1.01,1.01s-1.01-0.45-1.01-1.01c0-0.55,0.45-1,1.01-1
@@ -57,7 +93,10 @@ const Logo = (props: SVGProps<SVGSVGElement>) => {
               d="M27.01,10.98c0,0.56-0.45,1.01-1.01,1.01s-1.01-0.45-1.01-1.01c0-0.55,0.45-1,1.01-1
 	S27.01,10.43,27.01,10.98z"
             />
-            <polygon fill="#dedede" points="11,10 11,14 8,14 8,13 10,13 10,11 6,11 6,10 " />
+            <polygon
+              fill="#dedede"
+              points="11,10 11,14 8,14 8,13 10,13 10,11 6,11 6,10 "
+            />
             <rect x="6" y="13" fill="#dedede" width="1" height="1" />
             <rect x="6" y="11" fill="#5FFFBA" width="4" height="2" />
             <path
@@ -74,21 +113,16 @@ const Logo = (props: SVGProps<SVGSVGElement>) => {
         </svg>
       </motion.div>
       <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+        {...HOVER_TAP_PROPS}
         className="flex flex-col align-middle px-2 pt-3"
       >
         <motion.div
-          animate={{
-            transition: { duration: 0.25 },
-            scale: 1,
-          }}
-          initial={{ scale: 0 }}
+          {...LOGO_TEXT_ANIMATION}
           className="text-white text-2xl font-black cursor-pointer"
         >
           ERiCA BENNON
         </motion.div>
-        <motion.div initial={{ scale: -1 }} animate={{ scale: 1 }} className="text-white">
+        <motion.div {...SUBTITLE_ANIMATION} className="text-white">
           Photography
         </motion.div>
       </motion.div>
