@@ -2,31 +2,54 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 
+// Animation constants
+const ANIMATION_EASING = "power1.inOut";
+const INITIAL_MARGIN_TOP = "-60vh";
+const FADE_IN_DURATION = 1;
+const VIDEO_SCRUB_DURATION = 3;
+const SCRUB_INTENSITY = 2;
+
+// Scroll trigger configuration
+const SCROLL_TRIGGER_CONFIG = {
+  trigger: ".second-video",
+  start: "top top",
+  end: "bottom top",
+  scrub: SCRUB_INTENSITY,
+  pin: true,
+};
+
+// Animation selectors
+const VIDEO_SELECTOR = ".second-video";
+
 const SecondVideo = () => {
-  const videoRef = useRef<any>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(() => {
-    gsap.set(".second-video", { marginTop: "-60vh", opacity: 0 });
+    // Set initial state
+    gsap.set(VIDEO_SELECTOR, { marginTop: INITIAL_MARGIN_TOP, opacity: 0 });
 
+    // Create animation timeline
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".second-video",
-        start: "top top",
-        end: "bottom top",
-        scrub: 2,
-        pin: true,
-      },
+      scrollTrigger: SCROLL_TRIGGER_CONFIG,
     });
 
-    tl.to(".second-video", { opacity: 1, duration: 1, ease: "power1.inOut" });
+    // Fade in video
+    tl.to(VIDEO_SELECTOR, {
+      opacity: 1,
+      duration: FADE_IN_DURATION,
+      ease: ANIMATION_EASING,
+    });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
-        duration: 3,
-        ease: "power1.inOut",
-      });
-    };
+    // Play video with scroll
+    if (videoRef.current) {
+      videoRef.current.onloadedmetadata = () => {
+        tl.to(videoRef.current, {
+          currentTime: videoRef.current!.duration,
+          duration: VIDEO_SCRUB_DURATION,
+          ease: ANIMATION_EASING,
+        });
+      };
+    }
   });
 
   return (
